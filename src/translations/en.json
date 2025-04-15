@@ -1,0 +1,25 @@
+{
+  "app": {
+    "name": "Openly Customer Policy Info",
+    "short_description": "Openly Customer Policy Info",
+    "long_description": "Openly Customer Policy Info - Displays Policy information from Portal.",
+    "installation_instructions": "Configure the following app settings, then click Install:...",
+    "title": "Openly Customer Policy Info"
+  },
+  "parameters": {
+    "fields": {
+      "label": "Displayed Fields by Id",
+      "helpText": "Enter the Field Id's seperated by commas in the order you want them displayed. Seperate each section by a semi-colan. eg name,email,external_id;tags,time_zone"
+    },
+    "sections": {
+      "label": "Displayed Section Titles",
+      "helpText": "Enter the Section titles seperated by commas in the order you want them displayed. eg. Personal,Billing,Orders"
+    }
+  },
+  "ticket_sidebar": {
+    "title": "Hello from Ticket Side Bar"
+  },
+  "modal": {
+    "title": "Hello from Modal"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "react_js-template",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "dev": "vite --port 3000",
+    "watch": "vite build --watch --mode development",
+    "build:dev": "vite build --mode development",
+    "build": "vite build --mode production",
+    "lint": "eslint . --ext js,jsx --max-warnings 0",
+    "start": "zcli apps:server src",
+    "start:prod": "zcli apps:server dist"
+  },
+  "dependencies": {
+    "@zendeskgarden/css-bedrock": "^10.0.1",
+    "@zendeskgarden/react-accordions": "^9.5.4",
+    "@zendeskgarden/react-buttons": "^9.5.4",
+    "@zendeskgarden/react-grid": "^9.5.4",
+    "@zendeskgarden/react-theming": "^9.5.4",
+    "@zendeskgarden/react-typography": "^9.5.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.17"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.3.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "fast-glob": "^3.3.3",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.5.3",
+    "vite": "^6.2.6",
+    "vitest": "^3.1.1"
+  }
+}

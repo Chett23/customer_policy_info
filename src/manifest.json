@@ -1,0 +1,35 @@
+{
+  "name": "Openly Policy Info",
+  "author": {
+    "name": "Chester Hansen",
+    "email": "chester.hansen@zendesk.com"
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "ticket_sidebar": {
+        "url": "http://localhost:3000/",
+        "flexible": true
+      }
+    }
+  },
+  "parameters": [
+    {
+      "name": "fields",
+      "type": "text",
+      "required": false,
+      "secure": false,
+      "default": "name,email,external_id;tags,time_zone"
+    },
+    {
+      "name": "sections",
+      "type": "text",
+      "required": false,
+      "secure": false,
+      "default": "Personal,Billing,Orders"
+    }
+  ],
+  "version": "1.0",
+  "frameworkVersion": "2.0"
+}
