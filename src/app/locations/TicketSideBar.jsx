@@ -3,7 +3,7 @@ import { useClient } from '../hooks/useClient'
 // import { Button } from '@zendeskgarden/react-buttons'
 import { Grid } from '@zendeskgarden/react-grid'
 import { Accordion } from '@zendeskgarden/react-accordions'
-import { MD, SM, Span, XL } from '@zendeskgarden/react-typography'
+import { MD, Span, XL } from '@zendeskgarden/react-typography'
 import styled from 'styled-components'
 import policyDataBase from '../../assets/data/moc_data.json'
 
@@ -49,9 +49,9 @@ const TicketSideBar = () => {
   }
 
   const setSectionPanels = (displayFields, section) => {
-    const sectionPanels = displayFields.map((displayField, displayFieldIndex) => {
-      if (Object.keys(policyInfo[section]).includes(displayField)) {
-        return (
+    const sectionPanels = displayFields.map(
+      (displayField, displayFieldIndex) =>
+        Object.keys(policyInfo[section]).includes(displayField) && (
           <AccordionPanel key={`${displayField}-${displayFieldIndex}`}>
             <Grid.Row justifyContent="between">
               <Span isBold>{displayField}:</Span>
@@ -59,15 +59,7 @@ const TicketSideBar = () => {
             </Grid.Row>
           </AccordionPanel>
         )
-      } else {
-        return (
-          <AccordionPanel key={`${displayField}-${displayFieldIndex}`}>
-            <Span isBold>{displayField}:</Span>
-            <Span>{policyInfo[section][displayField]}</Span>
-          </AccordionPanel>
-        )
-      }
-    })
+    )
     return sectionPanels
   }
 
