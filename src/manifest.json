@@ -20,14 +20,14 @@
       "type": "text",
       "required": false,
       "secure": false,
-      "default": "name,email,external_id;tags,time_zone"
+      "default": "all"
     },
     {
       "name": "sections",
       "type": "text",
       "required": false,
       "secure": false,
-      "default": "Personal,Billing,Orders"
+      "default": "all"
     }
   ],
   "version": "1.0",

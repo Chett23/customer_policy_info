@@ -1,0 +1,147 @@
+{
+  "bxe-123432dsf": {
+    "transactional": {
+      "policyNumber": "bxe-123432dsf",
+      "lineagePolicyNumber": "axe-1234asdfs",
+      "termID": "sdf34",
+      "mostRecentTxn": "asd23",
+      "effectiveCancellationDate": "03/27/2045",
+      "agency": "The Good one",
+      "agencyShortID": "good1",
+      "agent": "John Doe",
+      "rce": "dfsdew",
+      "creditHit": false,
+      "insuredName": "Jane Doe",
+      "secondNamedInsured": "Jannet Doe",
+      "policyholderEmailAddress": "jane.doe@email.com",
+      "locationAddress": "123 lazy ln city, State , 123456",
+      "recentNotes": " notes notes notes notes notes notes notes notes.",
+      "notesUpdatedBy": "Joe Schmoe"
+    },
+    "billing": {
+      "policyNumber": "bxe-123432dsf",
+      "termID": "sdf34",
+      "paymentMethod": "************1234",
+      "paymentStatus": "active",
+      "receivedAuthorizationForm": true,
+      "outstandingBalance": false,
+      "epayLinksent": true,
+      "mortgageeBank": "Wells Fargo",
+      "mortgageeLoanNumber": "123456789",
+      "mortgageeAddress": "123 lazy ln city, State , 123456"
+    },
+    "claims": [
+      {
+        "policyNumber": "bxe-123432dsf",
+        "termID": "sdf34",
+        "claimID": "gkl345",
+        "claimNumber": "1234567",
+        "claimStatus": "accepted",
+        "lossType": "total",
+        "lossDate": "01/23/2015",
+        "adjusterInformation": "Richard Crown"
+      },
+      {
+        "policyNumber": "bxe-123432dsf",
+        "termID": "sdf34",
+        "claimID": "gkl3678",
+        "claimNumber": "98543",
+        "claimStatus": "investigation",
+        "lossType": "partial",
+        "lossDate": "12/06/2023",
+        "adjusterInformation": "Richard Crown"
+      },
+      {
+        "policyNumber": "bxe-123432dsf",
+        "termID": "sdf34",
+        "claimID": "kjh3765",
+        "claimNumber": "4567123468",
+        "claimStatus": "active",
+        "lossType": "partial",
+        "lossDate": "05/25/2024",
+        "adjusterInformation": "Richard Crown"
+      }
+    ],
+    "inspection": {
+      "inspectorName": "Richard Crown",
+      "inspectorContactInformation": "(123) 456-7890",
+      "inspectionDate": "05/29/2024",
+      "inspectionCompletionDate": "06/02/2024",
+      "canInspectionBeReordered": true,
+      "inspectionConcernsNoted": false
+    }
+  },
+
+  "jty-jkhbdsf5678": {
+    "transactional": {
+      "policyNumber": "jty-jkhbdsf5678",
+      "lineagePolicyNumber": "jty-kjhl",
+      "termID": "kjh577",
+      "mostRecentTxn": "lkj6789",
+      "effectiveCancellationDate": "04/16/2035",
+      "agency": "The Good one",
+      "agencyShortID": "good1",
+      "agent": "John Doe",
+      "rce": "dfgst54",
+      "creditHit": false,
+      "insuredName": "Jane Doe",
+      "secondNamedInsured": "Jannet Doe",
+      "policyholderEmailAddress": "jane.doe@email.com",
+      "locationAddress": "123 lazy ln city, State , 123456",
+      "recentNotes": " notes notes notes notes notes notes notes notes.",
+      "notesUpdatedBy": "Joe Schmoe"
+    },
+    "billing": {
+      "policyNumber": "jty-jkhbdsf5678",
+      "termID": "kjh577",
+      "paymentMethod": "************5678",
+      "paymentStatus": "active",
+      "receivedAuthorizationForm": true,
+      "outstandingBalance": false,
+      "epayLinksent": true,
+      "mortgageeBank": "Wells Fargo",
+      "mortgageeLoanNumber": "0987654321",
+      "mortgageeAddress": "123 lazy ln city, State , 123456"
+    },
+    "claims": [
+      {
+        "policyNumber": "jty-jkhbdsf5678",
+        "termID": "kjh577",
+        "claimID": "cxvdf67",
+        "claimNumber": "876543",
+        "claimStatus": "accepted",
+        "lossType": "total",
+        "lossDate": "02/28/2016",
+        "adjusterInformation": "Richard Crown"
+      },
+      {
+        "policyNumber": "jty-jkhbdsf5678",
+        "termID": "kjh577",
+        "claimID": "oipo456",
+        "claimNumber": "67473214",
+        "claimStatus": "investigation",
+        "lossType": "partial",
+        "lossDate": "01/12/2023",
+        "adjusterInformation": "Richard Crown"
+      },
+      {
+        "policyNumber": "jty-jkhbdsf5678",
+        "termID": "kjh577",
+        "claimID": "kjh3765",
+        "claimNumber": "23895789245",
+        "claimStatus": "active",
+        "lossType": "partial",
+        "lossDate": "05/25/2024",
+        "adjusterInformation": "Richard Crown"
+      }
+    ],
+    "inspection": {
+      "inspectorName": "Richard Crown",
+      "inspectorContactInformation": "(123) 456-7890",
+      "inspectionDate": "05/29/2024",
+      "inspectionCompletionDate": "06/02/2024",
+      "canInspectionBeReordered": true,
+      "inspectionConcernsNoted": false
+    }
+  }
+}

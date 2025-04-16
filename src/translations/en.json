@@ -9,11 +9,11 @@
   "parameters": {
     "fields": {
       "label": "Displayed Fields by Id",
-      "helpText": "Enter the Field Id's seperated by commas in the order you want them displayed. Seperate each section by a semi-colan. eg name,email,external_id;tags,time_zone"
+      "helpText": "Enter the Field Id's seperated by commas in the order you want them displayed. eg name,email,external_id,tags,time_zone. Default is 'all'."
     },
     "sections": {
       "label": "Displayed Section Titles",
-      "helpText": "Enter the Section titles seperated by commas in the order you want them displayed. eg. Personal,Billing,Orders"
+      "helpText": "Enter the Section titles seperated by commas in the order you want them displayed. eg. Transactional,Billing,Claims. Default is 'all'."
     }
   },
   "ticket_sidebar": {

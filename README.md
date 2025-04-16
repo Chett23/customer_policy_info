@@ -1,8 +1,11 @@
 *Use of this software is subject to important terms and conditions as set forth in the License file*
 
-# React App Scaffold
+# Proof of Concept - Customer Policy Info - Zendesk Ticket sidebar
 
 ## Description
+
+This app is designed as a proof of concept to show the capability and possibilities of the Zendesk Apps Framework and Zendesk gardens to increase the information available to the agents, when working tickets. 
+
 
 This repo contains a scaffold to help developers build [apps for Zendesk products](https://developer.zendesk.com/apps/docs/apps-v2/getting_started).
 
@@ -12,6 +15,12 @@ This repo contains a scaffold to help developers build [apps for Zendesk product
 
 - [Node.js](https://nodejs.org/en/) >= 18.12.1
 - [Ruby](https://www.ruby-lang.org/) = 2.6.x
+
+### Npm Dependancies
+
+- [React.js](https://www.npmjs.com/package/react) = ^18.2.0
+- [React-dom](http://npmjs.com/package/react-dom) = ^18.2.0
+- [eslint](https://www.npmjs.com/package/eslint) = ^8.57.0
 
 ### Setup
 
