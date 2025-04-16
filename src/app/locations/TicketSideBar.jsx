@@ -55,7 +55,7 @@ const TicketSideBar = () => {
           <AccordionPanel key={`${displayField}-${displayFieldIndex}`}>
             <Grid.Row justifyContent="between">
               <Span isBold>{displayField}:</Span>
-              <Span>{policyInfo[section][displayField]}</Span>
+              <Span>{`${policyInfo[section][displayField]}`}</Span>
             </Grid.Row>
           </AccordionPanel>
         )
