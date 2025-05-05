@@ -3,7 +3,7 @@ import { useClient } from '../hooks/useClient'
 // import { Button } from '@zendeskgarden/react-buttons'
 import { Grid } from '@zendeskgarden/react-grid'
 import { Accordion } from '@zendeskgarden/react-accordions'
-import { MD, Span, XL } from '@zendeskgarden/react-typography'
+import { MD, SM, LG, XL } from '@zendeskgarden/react-typography'
 import styled from 'styled-components'
 import policyDataBase from '../../assets/data/moc_data.json'
 
@@ -20,25 +20,12 @@ const TicketSideBar = () => {
       .get(['ticket.requester.id', 'ticket.customField:custom_field_40262925004179'])
       .then(({ 'ticket.requester.id': userId, ...data }) => {
         const policyResponse = getPolicyInfo(data['ticket.customField:custom_field_40262925004179'])
-        const flattenedPolicyResponse = Object.keys(policyResponse).reduce((newObj, section, sectionIndex) => {
-          if (Array.isArray(policyResponse[section])) {
-            policyResponse[section].forEach((arrObj) => {
-              newObj[`Claim ID: ${arrObj.claimID}`] = arrObj
-            })
-          } else {
-            newObj[section] = policyResponse[section]
-          }
-          return newObj
-        }, {})
-
-        setPolicyInfo(flattenedPolicyResponse)
+        setPolicyInfo(policyResponse)
         setPolicyNumber(data['ticket.customField:custom_field_40262925004179'])
 
         client.metadata().then(({ settings }) => {
           setSettings(settings)
-          setDisplaySections(
-            settings.sections === 'all' ? Object.keys(flattenedPolicyResponse) : settings.sections.split(',')
-          )
+          setDisplaySections(settings.sections === 'all' ? Object.keys(policyResponse) : settings.sections.split(','))
         })
       })
   }
@@ -48,14 +35,18 @@ const TicketSideBar = () => {
     return policyDataBase[policyNumber]
   }
 
-  const setSectionPanels = (displayFields, section) => {
+  const setSectionPanels = (section) => {
+    const displayFields = settings.fields === 'all' ? Object.keys(section) : settings.fields.split(',')
+    console.log(section)
+    console.log(displayFields)
+
     const sectionPanels = displayFields.map(
       (displayField, displayFieldIndex) =>
-        Object.keys(policyInfo[section]).includes(displayField) && (
+        Object.keys(section).includes(displayField) && (
           <AccordionPanel key={`${displayField}-${displayFieldIndex}`}>
             <Grid.Row justifyContent="between">
-              <Span isBold>{displayField}:</Span>
-              <Span>{`${policyInfo[section][displayField]}`}</Span>
+              <MD isBold>{displayField}:</MD>
+              <SM>{}</SM>
             </Grid.Row>
           </AccordionPanel>
         )
@@ -79,15 +70,31 @@ const TicketSideBar = () => {
           <Accordion defaultExpandedSections={[0]} isCompact level={4}>
             {policyInfo &&
               displaySections.map((section, index) => {
-                const displayFields =
-                  settings.fields === 'all' ? Object.keys(policyInfo[section]) : settings.fields.split(',')
-                const sectionPanels = setSectionPanels(displayFields, section)
+                let sectionPanels
+                if (Array.isArray(policyInfo[section])) {
+                  // SubSectionLogic
+                  sectionPanels = policyInfo[section].map((subSectionObj, index) => {
+                    const subSectionPanels = setSectionPanels(subSectionObj)
+                    return (
+                      <>
+                        <AccordionPanel key={`${index}-${section}-${subSectionObj.claimID}`}>
+                          <AccordionSubSection>
+                            <MD isBold>Claim {subSectionObj.claimID.replace(/^./, (s) => s.toUpperCase())}</MD>
+                          </AccordionSubSection>
+                        </AccordionPanel>
+                        {subSectionPanels}
+                      </>
+                    )
+                  })
+                } else {
+                  sectionPanels = setSectionPanels(policyInfo[section])
+                }
                 return (
                   <AccordionSection key={`${index}-${section}`}>
                     <Accordion.Header>
                       <Accordion.Label>
                         {/* capitalized the First letter of the titles */}
-                        {section.replace(/^./, (s) => s.toUpperCase())}
+                        <LG isBold>{section.replace(/^./, (s) => s.toUpperCase())}</LG>
                       </Accordion.Label>
                     </Accordion.Header>
                     {sectionPanels}
@@ -104,6 +111,10 @@ const TicketSideBar = () => {
 const AccordionSection = styled(Accordion.Section)`
   background-color: #ded6f5;
   border-radius: 8px;
+`
+const AccordionSubSection = styled(Grid.Row)`
+  justify-content: start;
+  color: #ad99e6;
 `
 const AccordionPanel = styled(Accordion.Panel)`
   background-color: #ffffff;
