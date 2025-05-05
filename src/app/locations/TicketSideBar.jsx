@@ -37,9 +37,6 @@ const TicketSideBar = () => {
 
   const setSectionPanels = (section) => {
     const displayFields = settings.fields === 'all' ? Object.keys(section) : settings.fields.split(',')
-    console.log(section)
-    console.log(displayFields)
-
     const sectionPanels = displayFields.map(
       (displayField, displayFieldIndex) =>
         Object.keys(section).includes(displayField) && (
