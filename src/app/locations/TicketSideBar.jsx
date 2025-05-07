@@ -70,19 +70,25 @@ const TicketSideBar = () => {
                 let sectionPanels
                 if (Array.isArray(policyInfo[section])) {
                   // SubSectionLogic
-                  sectionPanels = policyInfo[section].map((subSectionObj, index) => {
-                    const subSectionPanels = setSectionPanels(subSectionObj)
-                    return (
-                      <>
-                        <AccordionPanel key={`${index}-${section}-${subSectionObj.claimID}`}>
-                          <AccordionSubSection>
-                            <MD isBold>Claim {subSectionObj.claimID.replace(/^./, (s) => s.toUpperCase())}</MD>
-                          </AccordionSubSection>
-                        </AccordionPanel>
-                        {subSectionPanels}
-                      </>
-                    )
-                  })
+                  sectionPanels = (
+                    <AccordionPanel>
+                      <Accordion isCompact level={4}>
+                        {policyInfo[section].map((subSectionObj, index) => {
+                          const subSectionPanels = setSectionPanels(subSectionObj)
+                          return (
+                            <AccordionSection key={`${index}-${section}-${subSectionObj.claimID}`}>
+                              <Accordion.Header>
+                                <Accordion.Label>
+                                  <MD isBold>Claim {subSectionObj.claimID.replace(/^./, (s) => s.toUpperCase())}</MD>
+                                </Accordion.Label>
+                              </Accordion.Header>
+                              {subSectionPanels}
+                            </AccordionSection>
+                          )
+                        })}
+                      </Accordion>
+                    </AccordionPanel>
+                  )
                 } else {
                   sectionPanels = setSectionPanels(policyInfo[section])
                 }
@@ -108,10 +114,6 @@ const TicketSideBar = () => {
 const AccordionSection = styled(Accordion.Section)`
   background-color: #ded6f5;
   border-radius: 8px;
-`
-const AccordionSubSection = styled(Grid.Row)`
-  justify-content: start;
-  color: #ad99e6;
 `
 const AccordionPanel = styled(Accordion.Panel)`
   background-color: #ffffff;
